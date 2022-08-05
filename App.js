@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
 import Field from "./src/components/Field";
-import Mine from "./src/components/Mine";
 
 import params from "./src/params";
 
@@ -21,6 +20,8 @@ export default function App() {
       <Field mined />
       <Field mined opened />
       <Field mined opened exploded />
+      <Field flagged />
+      <Field flagged opened />
     </View>
   );
 }
