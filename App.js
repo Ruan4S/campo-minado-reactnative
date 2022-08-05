@@ -1,5 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import Field from "./src/components/Field";
 
 import params from "./src/params";
 
@@ -11,6 +11,12 @@ export default function App() {
         Tamanho da grade:
         {params.getRowsAmount()}x{params.getColumnsAmount()}
       </Text>
+      <Field />
+      <Field opened />
+      <Field opened nearMines={1} />
+      <Field opened nearMines={2} />
+      <Field opened nearMines={5} />
+      <Field opened nearMines={8} />
     </View>
   );
 }
