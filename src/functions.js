@@ -54,16 +54,14 @@ const getNeighbors = (board, row, column) => {
   const columns = [column - 1, column, column + 1];
   rows.forEach((r) => {
     columns.forEach((c) => {
-      const different = r !== row || c !== column;
-      const validRow = r >= 0 < board.length;
-      const validColumn = c >= 0 < board[0].length;
-
-      if (different && validRow && validColumn) {
+      const diferent = r !== row || c !== column;
+      const validRow = r >= 0 && r < board.length;
+      const validColumn = c >= 0 && c < board[0].length;
+      if (diferent && validRow && validColumn) {
         neighbors.push(board[r][c]);
       }
     });
   });
-
   return neighbors;
 };
 

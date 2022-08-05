@@ -1,10 +1,10 @@
 import { StyleSheet, View } from "react-native";
 import Field from "./Field";
 
-export default ({ board }) => {
+export default ({ board, onOpenField }) => {
   const rows = board.map((row, r) => {
     const columns = row.map((field, c) => {
-      return <Field key={c} {...field} />;
+      return <Field key={c} {...field} onOpen={() => onOpenField(r, c)} />;
     });
 
     return (
