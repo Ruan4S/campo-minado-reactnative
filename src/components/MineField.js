@@ -1,10 +1,17 @@
 import { StyleSheet, View } from "react-native";
 import Field from "./Field";
 
-export default ({ board, onOpenField }) => {
+export default ({ board, onOpenField, onSelectField }) => {
   const rows = board.map((row, r) => {
     const columns = row.map((field, c) => {
-      return <Field key={c} {...field} onOpen={() => onOpenField(r, c)} />;
+      return (
+        <Field
+          key={c}
+          {...field}
+          onOpen={() => onOpenField(r, c)}
+          onSelect={() => onSelectField(r, c)}
+        />
+      );
     });
 
     return (
